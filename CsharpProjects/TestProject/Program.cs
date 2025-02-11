@@ -435,3 +435,57 @@
 //         Console.WriteLine(i);
 //     }
 // }
+
+// Add looping logic to your code using the do-while and while statements in C#
+
+// Random random = new Random();
+// int current = random.Next(1, 11);
+
+// do {
+//     current = random.Next(1, 11);
+
+
+//     if (current >= 8) {
+//         continue;
+
+//         Console.WriteLine(current); 
+        
+//     }
+//     Console.WriteLine(current);
+// } while(current != 7);
+
+// while (current >= 3) {
+//     Console.WriteLine(current);
+//     current = random.Next(1, 11);
+// }
+// Console.WriteLine($"Last number: {current}");
+
+// int heroHealth = 10;
+// int monsterHealth = 10;
+// Random random = new Random();
+
+
+// while (heroHealth > 0 && monsterHealth > 0) {
+
+   
+//     int heroDamage = random.Next(1, 11);
+//     int monsterDamage = random.Next(1, 11);
+
+//     monsterHealth -= heroDamage;
+//     heroHealth -= monsterDamage;
+
+//     Console.WriteLine($"Monster was damage and lost {heroDamage} health and now has {monsterHealth}");
+//     Console.WriteLine($"Hero was damage and lost {monsterDamage} health and now has {heroHealth}");
+    
+    // if (heroHealth <= 0 && monsterHealth > 0) {
+    //     Console.WriteLine("The hero has been defeated!");
+    // }
+    // else if (monsterHealth <= 0 && heroHealth > 0) {
+    //     Console.WriteLine("The monster has been defeated!");
+    // }
+    // else if (heroHealth <= 0 && monsterHealth <= 0){
+    //     Console.WriteLine("The hero and monster defeated each other!");
+    //}
+//}
+// Console.WriteLine(heroHealth > monsterHealth ? "The Hero wins!" : "The monster wins!");
+
