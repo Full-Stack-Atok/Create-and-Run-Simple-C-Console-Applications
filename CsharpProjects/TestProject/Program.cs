@@ -489,3 +489,88 @@
 //}
 // Console.WriteLine(heroHealth > monsterHealth ? "The Hero wins!" : "The monster wins!");
 
+// Code Project 1 - write code that validates integer output
+
+// string? readResult;
+// bool validEntry = false;
+// Console.WriteLine("Enter a number between 5 and 10.");
+
+// do{
+//     readResult = Console.ReadLine();
+//     if (readResult != null && int.TryParse(readResult, out int number) && number >= 5 && number <= 10) {
+//         validEntry = true;
+//         Console.WriteLine($"You entered {number}.");
+//     } else if(!int.TryParse(readResult, out _)) {
+//         Console.WriteLine("You did not enter a number.");
+//     } else if (!validEntry) {
+//         Console.WriteLine("Invalid entry. Please enter a number between 5 and 10.");
+//     }
+
+// }while (validEntry == false);
+
+// Code Project 2 - write code that validates string input
+
+// string? readResult;
+// bool validEntry = false;
+// Console.WriteLine("Enter your role name (Administrator, Manager, or User)");
+
+// do {
+//     readResult = Console.ReadLine();
+
+//     if (readResult != null) {
+//         string trimmedInput = readResult.Trim().ToLower();
+
+//         if(trimmedInput == "administrator" || trimmedInput == "manager" || trimmedInput == "user") {
+//             validEntry = true;
+//             switch(trimmedInput) {
+//                 case "administrator":
+//                     Console.WriteLine($"Your input value ({readResult}) is valid.");
+//                     break;
+//                 case "manager":
+//                     Console.WriteLine($"Your input value({readResult}) is valid.");
+//                     break;
+//                 default:
+//                     Console.WriteLine($"You don't have the enough access!");
+//                     break;
+//             } 
+//         } else {
+//             Console.WriteLine("Invalid entry. Please enter a valid role name (administrator, manager, or user).");
+//         }
+
+//     }
+// } while(validEntry == false);
+
+// Code Project 3 - Write code that process the contents of a string array
+
+string[] myStrings = new string[2] {
+    "I like pizza. I like roast chicken. I like salad",
+    "I like all three of the menu choices"
+};
+
+// Outer loop: Process each string in the array
+foreach (string originalString in myStrings) {
+
+    string myString = originalString; // Copy the original string
+    int periodLocation = myString.IndexOf("."); // find the first period
+
+    // Inner Loop: Process sentence if period exits
+    while(periodLocation != -1) {
+        // Extract the sentence up to the period (without the period)
+        string sentence = myString.Substring(0, periodLocation).TrimStart();
+        
+        // Display the extracted sentence
+        Console.WriteLine(sentence);
+
+        // Remove the processed sentence, including the period
+        myString = myString.Remove(0, periodLocation + 1);
+
+        // Find the next period
+        periodLocation = myString.IndexOf(".");
+    }
+
+    // Display the last part of the string if there's no period at the end
+    if(!string.IsNullOrWhiteSpace(myString)) {
+        Console.WriteLine(myString.TrimStart());
+    }
+}
+
