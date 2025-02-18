@@ -542,35 +542,117 @@
 
 // Code Project 3 - Write code that process the contents of a string array
 
-string[] myStrings = new string[2] {
-    "I like pizza. I like roast chicken. I like salad",
-    "I like all three of the menu choices"
-};
+// string[] myStrings = new string[2] {
+//     "I like pizza. I like roast chicken. I like salad",
+//     "I like all three of the menu choices"
+// };
 
-// Outer loop: Process each string in the array
-foreach (string originalString in myStrings) {
+// // Outer loop: Process each string in the array
+// foreach (string originalString in myStrings) {
 
-    string myString = originalString; // Copy the original string
-    int periodLocation = myString.IndexOf("."); // find the first period
+//     string myString = originalString; // Copy the original string
+//     int periodLocation = myString.IndexOf("."); // find the first period
 
-    // Inner Loop: Process sentence if period exits
-    while(periodLocation != -1) {
-        // Extract the sentence up to the period (without the period)
-        string sentence = myString.Substring(0, periodLocation).TrimStart();
+//     // Inner Loop: Process sentence if period exits
+//     while(periodLocation != -1) {
+//         // Extract the sentence up to the period (without the period)
+//         string sentence = myString.Substring(0, periodLocation).TrimStart();
         
-        // Display the extracted sentence
-        Console.WriteLine(sentence);
+//         // Display the extracted sentence
+//         Console.WriteLine(sentence);
 
-        // Remove the processed sentence, including the period
-        myString = myString.Remove(0, periodLocation + 1);
+//         // Remove the processed sentence, including the period
+//         myString = myString.Remove(0, periodLocation + 1);
 
-        // Find the next period
-        periodLocation = myString.IndexOf(".");
-    }
+//         // Find the next period
+//         periodLocation = myString.IndexOf(".");
+//     }
 
-    // Display the last part of the string if there's no period at the end
-    if(!string.IsNullOrWhiteSpace(myString)) {
-        Console.WriteLine(myString.TrimStart());
-    }
-}
+//     // Display the last part of the string if there's no period at the end
+//     if(!string.IsNullOrWhiteSpace(myString)) {
+//         Console.WriteLine(myString.TrimStart());
+//     }
+// }
 
+// Work with variable data in C# console applications (Part 4)
+
+// Console.WriteLine("Signed integral types: ");
+
+// Console.WriteLine($"sbyte: {sbyte.MinValue} to {sbyte.MaxValue}");
+// Console.WriteLine($"short: {short.MinValue} to {short.MaxValue}");
+// Console.WriteLine($"int: {int.MinValue} to {int.MaxValue}");
+// Console.WriteLine($"long: {long.MinValue} to {long.MaxValue}");
+
+// Console.WriteLine("");
+// Console.WriteLine("Unsigned integral types:");
+
+// Console.WriteLine($"byte: {byte.MinValue} to {byte.MaxValue}");
+// Console.WriteLine($"ushort: {ushort.MinValue} to {ushort.MaxValue}");
+// Console.WriteLine($"uint: {uint.MinValue} to {uint.MaxValue}");
+// Console.WriteLine($"ulong: {ulong.MinValue} to {ulong.MaxValue}");
+
+// Console.WriteLine("");
+// Console.WriteLine("Floating point types:");
+// Console.WriteLine($"float  : {float.MinValue} to {float.MaxValue}");
+// Console.WriteLine($"double : {double.MinValue} to {double.MaxValue}");
+// Console.WriteLine($"decimal: {decimal.MinValue} to {decimal.MaxValue}");
+
+// int[] data = new int[3];
+
+// string shortenedString = "Hello World!";
+// Console.WriteLine(shortenedString);
+
+// int val_A = 2;
+// int val_B = val_A;
+// val_B = 5;
+
+// Console.WriteLine("--Value Types--");
+// Console.WriteLine($"val_A: {val_A}");
+// Console.WriteLine($"val_B: {val_B}");   
+
+// int[] ref_A = new int[1];
+// ref_A[0] = 2;
+// int[] ref_B = ref_A;
+// ref_B[0] = 5;
+
+// Console.WriteLine("--Reference Types--");
+// Console.WriteLine($"ref_A[0]: {ref_A[0]}");
+// Console.WriteLine($"ref_B[0]: {ref_B[0]}");
+
+// int first = 2;
+// string second = "4";
+// string result = first + second;
+// Console.WriteLine(result);
+
+// int myInt = 3;
+// Console.WriteLine($"int: {myInt}");
+
+// decimal myDecimal = myInt;
+// Console.WriteLine($"decimal: {myDecimal}");
+
+// decimal myDecimal = 3.14m;
+// Console.WriteLine($"decimal: {myDecimal}");
+
+// int myInt = (int)myDecimal;
+// Console.WriteLine($"int: {myInt}");
+
+// decimal myDecimal = 1.23456789m;
+// float myFloat = (float)myDecimal;
+
+// Console.WriteLine($"Decimal: {myDecimal}");
+// Console.WriteLine($"Float: {myFloat}");
+
+// int first = 5;
+// int second = 7;
+// string message = first.ToString() + second.ToString();
+// Console.WriteLine(message);
+
+// string first = "5";
+// string second = "7";
+// int sum = int.Parse(first) + int.Parse(second);
+// Console.WriteLine(sum);
+
+string value1 = "5";
+string value2 = "7";
+int result = Convert.ToInt32(value1) * Convert.ToInt32(value2);
+Console.WriteLine(result);
