@@ -713,3 +713,115 @@
 
 // float result2 = (value3 / (float)value1);
 // Console.WriteLine($"Divide value3 by value1, display the result as a float: {result2}");
+
+
+// Perform operations on arrays using helper methods in C#
+
+string[] pallets = [
+    "B14",
+    "A11",
+    "B12",
+    "A13"
+];
+
+// Console.WriteLine("Sorted...");
+// Array.Sort(pallets);
+// foreach(var pallet in pallets) {
+//     Console.WriteLine($"-- {pallet}");
+// }
+
+// Console.WriteLine("");
+// Console.WriteLine("Reversed...");
+// Array.Reverse(pallets);
+// foreach(var pallet in pallets) {
+//     Console.WriteLine($"-- {pallet}");
+// }
+
+// Console.WriteLine("");
+ 
+// Array.Clear(pallets, 0, 2);
+// Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
+// foreach(var pallet in pallets) {
+//     Console.WriteLine($"-- {pallet}");
+// }
+
+// Console.WriteLine("");
+// Array.Resize(ref pallets, 6);
+// Console.WriteLine($"Resizing to 6 ... count: {pallets.Length}");
+
+// pallets[4] = "C01";
+// pallets[5] = "C02";
+
+// foreach (var pallet in pallets) {
+//     Console.WriteLine($"--{pallet}");
+// }
+
+
+// Console.WriteLine("");
+// Array.Resize(ref pallets, 3);
+// Console.WriteLine($"Resizing to 3 ... count: {pallets.Length}");
+
+// foreach(var pallet in pallets) {
+//     Console.WriteLine($"--{pallet}");
+// }
+
+// string value = "abc123";
+// char[] valueArray = value.ToCharArray();
+// Array.Reverse(valueArray);
+// // string result = new string(valueArray);
+// string result = String.Join(",",valueArray);
+// Console.WriteLine(result);
+
+// string[] items = result.Split(',');
+// foreach (string item in items) {
+//     Console.WriteLine(item);
+// }
+
+// string pangram = "The quick brown fox jumps over the lazy dog";
+
+// char[] valueArray = pangram.ToCharArray();
+// Array.Reverse(valueArray);
+// string result = new string(valueArray);
+
+// Console.WriteLine(result);
+
+// Step 1
+// string[] message = pangram.Split(" ");
+
+// Step 2
+// string[] newMessage = new string[message.Length];
+
+// Step 3
+// for (int i = 0; i < message.Length; i++) {
+//     char[] letters = message[i].ToCharArray();
+//     Array.Reverse(letters);
+//     newMessage[i] = new string(letters);
+// }
+
+// Step 4
+// string result = String.Join(" ",newMessage);
+// Console.WriteLine(result);
+
+
+string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+
+string[] orders = orderStream.Split(",");
+
+// string[] checkOrderStream = new string [orders.Length];
+
+// for (int i = 0; i < orders.Length; i++) {
+//     char[] letters = orders[i].ToCharArray();
+Array.Sort(orders);
+//     checkOrderStream[i] = new string(letters);
+// }
+
+foreach(var order in orders) {
+    if (order.Length == 4) {
+        Console.WriteLine(order);
+    }
+    else {
+        Console.WriteLine($"{order}\t--Error");
+    }
+}
+
+
