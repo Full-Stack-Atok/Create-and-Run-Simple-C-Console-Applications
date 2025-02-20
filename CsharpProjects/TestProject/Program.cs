@@ -803,25 +803,81 @@ string[] pallets = [
 // Console.WriteLine(result);
 
 
-string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+// string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
 
-string[] orders = orderStream.Split(",");
+// string[] orders = orderStream.Split(",");
 
 // string[] checkOrderStream = new string [orders.Length];
 
 // for (int i = 0; i < orders.Length; i++) {
 //     char[] letters = orders[i].ToCharArray();
-Array.Sort(orders);
+// Array.Sort(orders);
 //     checkOrderStream[i] = new string(letters);
 // }
 
-foreach(var order in orders) {
-    if (order.Length == 4) {
-        Console.WriteLine(order);
-    }
-    else {
-        Console.WriteLine($"{order}\t--Error");
-    }
-}
+// foreach(var order in orders) {
+//     if (order.Length == 4) {
+//         Console.WriteLine(order);
+//     }
+//     else {
+//         Console.WriteLine($"{order}\t--Error");
+//     }
+// }
 
 
+// Work with variable data in C# console applications
+
+// string first = "Hello";
+// string second = "World";
+
+// string result = string.Format("{0} {1}", first, second);
+// Console.WriteLine($"{first} {second}");
+// Console.WriteLine($"{second} {first}");
+// Console.WriteLine($"{first}, {first}, {first}");
+
+// decimal price = 123.45m;
+// int discount = 50;
+
+// Console.WriteLine($"Price: {price:C} (Save {discount:C})");
+
+// decimal measurement = 123456.78912m;
+// Console.WriteLine($"Measurement: {measurement:N4} units");
+
+// decimal tax = .36785m;
+// Console.WriteLine($"Tax rate: {tax:P2}");
+
+// decimal price = 67.55m;
+// decimal salePrice = 59.99m;
+
+// string yourDiscount = String.Format("You saved {0:C2} off the regular price {1:C2} price.", (price - salePrice), price);
+// yourDiscount += $" A discount of {((price - salePrice) / price):P2}!"; // inserted
+// Console.WriteLine(yourDiscount);
+
+// int invoiceNumber = 1201;
+// decimal productShares = 25.45678m;
+// decimal subtotal = 2750.00m;
+// decimal taxPercentage = .15825m;
+// decimal total = 3185.19m;
+
+// Console.WriteLine($"Invoice Number: {invoiceNumber}");
+// Console.WriteLine($"   Shares: {productShares:N3} Product");
+// Console.WriteLine($"     Sub Total: {subtotal:C3}");
+// Console.WriteLine($"           Tax: {taxPercentage:P2}");
+// Console.WriteLine($"     Total Billed: {total:C}");
+
+// string input = "Pad this";
+// Console.WriteLine(input.PadRight(12));
+
+// Console.WriteLine(input.PadLeft(12,'-'));
+// Console.WriteLine(input.PadRight(12, '-'));
+
+string paymentId = "769c";
+string payeeName = "Mr. Stephen Ortega";
+string paymentAmount = "$5,000.00";
+
+var formattedLine = paymentId.PadRight(6);
+formattedLine += payeeName.PadRight(24);
+formattedLine += paymentAmount.PadLeft(10);
+
+Console.WriteLine("1234567890123456789012345678901234567890");
+Console.WriteLine(formattedLine);
