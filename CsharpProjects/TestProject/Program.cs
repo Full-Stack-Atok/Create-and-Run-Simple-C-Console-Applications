@@ -740,7 +740,7 @@ string[] pallets = [
 // }
 
 // Console.WriteLine("");
- 
+
 // Array.Clear(pallets, 0, 2);
 // Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
 // foreach(var pallet in pallets) {
@@ -961,8 +961,8 @@ string[] pallets = [
 //     int length = closingPosition - openingPosition;
 //     Console.WriteLine(message.Substring(openingPosition, length));
 
-    // Note the overload of the Substring to return only the remaining
-    // unprocessed message:
+// Note the overload of the Substring to return only the remaining
+// unprocessed message:
 
 //     message = message.Substring(closingPosition + 1); 
 // }
@@ -1390,61 +1390,96 @@ else ipAddress in invalid
 //     }
 // }
 
-string[,] corporate = 
+// string[,] corporate = 
+// {
+//     {"Robert", "Bavin"}, {"Simon", "Bright"},
+//     {"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
+//     {"Sarah", "Delucchi"}, {"Sinan", "Ali"}
+// };
+
+// string[,] external = 
+// {
+//     {"Vinnie", "Ashton"}, {"Cody", "Dysart"},
+//     {"Shay", "Lawrence"}, {"Daren", "Valdes"}
+// };
+
+// string externalDomain = "hayworth.com";
+
+// CorporateEmail(corporate);
+// ExternalEmail(external);
+
+
+
+// void CorporateEmail(string[,] employees)
+// { 
+//     for (int i = 0; i < corporate.GetLength(0); i++)
+//     {   
+//         string firstName = employees[i, 0];
+//         String lastName = employees[i, 1];
+
+//         if (firstName.Length >=2 )
+//         {
+//             string email = $"{firstName.Substring(0, 2).ToLower()}{lastName.ToLower()}@contoso.com";
+//             Console.WriteLine(email);
+//         }
+//         else
+//         {
+//             Console.WriteLine($"Error: First name '{firstName}' is too short to generate an email");
+//         }
+//     }
+// }
+
+// void ExternalEmail(string[,] employees)
+// {
+//     for (int i = 0; i < external.GetLength(0); i++)
+//     {
+//         string firstName = external[i, 0];
+//         string lastName = external[i, 1];
+
+//         if (firstName.Length >= 2)
+//         {
+//             string email = $"{firstName.Substring(0, 2).ToLower()}{lastName.ToLower()}@{externalDomain}";
+//             Console.WriteLine(email);
+//         }
+//         else
+//         {
+//             Console.WriteLine($"Error: First name '{firstName}' is too short to generate an email");
+//         }
+
+//     }
+// }
+
+//Create C# methods that return values
+
+double total = 0;
+double minimumSpend = 30.00;
+
+double[] items = { 15.97, 3.50, 12.25, 22.99, 10.98 };
+double[] discounts = { 0.30, 0.00, 0.10, 0.20, 0.50 };
+
+for (int i = 0; i < items.Length; i++)
 {
-    {"Robert", "Bavin"}, {"Simon", "Bright"},
-    {"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
-    {"Sarah", "Delucchi"}, {"Sinan", "Ali"}
-};
-
-string[,] external = 
-{
-    {"Vinnie", "Ashton"}, {"Cody", "Dysart"},
-    {"Shay", "Lawrence"}, {"Daren", "Valdes"}
-};
-
-string externalDomain = "hayworth.com";
-
-CorporateEmail(corporate);
-ExternalEmail(external);
-
-
-
-void CorporateEmail(string[,] employees)
-{ 
-    for (int i = 0; i < corporate.GetLength(0); i++)
-    {   
-        string firstName = employees[i, 0];
-        String lastName = employees[i, 1];
-
-        if (firstName.Length >=2 )
-        {
-            string email = $"{firstName.Substring(0, 2).ToLower()}{lastName.ToLower()}@contoso.com";
-            Console.WriteLine(email);
-        }
-        else
-        {
-            Console.WriteLine($"Error: First name '{firstName}' is too short to generate an email");
-        }
-    }
+    total += GetDiscountedPrice(i);
 }
 
-void ExternalEmail(string[,] employees)
-{
-    for (int i = 0; i < external.GetLength(0); i++)
-    {
-        string firstName = external[i, 0];
-        string lastName = external[i, 1];
+total -= TotalMeetsMinimum() ? 5.00 : 0;
 
-        if (firstName.Length >= 2)
-        {
-            string email = $"{firstName.Substring(0, 2).ToLower()}{lastName.ToLower()}@{externalDomain}";
-            Console.WriteLine(email);
-        }
-        else
-        {
-            Console.WriteLine($"Error: First name '{firstName}' is too short to generate an email");
-        }
-        
-    }
+Console.WriteLine($"Total: ${FormatDecimal(total)}");
+
+double GetDiscountedPrice(int itemIndex)
+{
+    // Calculate the discounted price of the item
+    return items[itemIndex] * (1 - discounts[itemIndex]);
+}
+
+bool TotalMeetsMinimum()
+{
+    // Check if the total meets the minimum
+    return total >= minimumSpend;
+}
+
+string FormatDecimal(double input)
+{
+    // Format the double so only 2 decimal places are displayed
+    return input.ToString().Substring(0, 5);
 }
